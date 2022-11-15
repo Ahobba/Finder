@@ -2,6 +2,8 @@ from pyautogui import moveTo, click, press, hotkey
 from keyboard import write
 from time import sleep
 
+#teste
+
 def action(site, nome, ferramenta, pesquisa):
     moveTo(77, 752)
 
