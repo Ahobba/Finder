@@ -26,6 +26,11 @@ def action(site, nome, ferramenta, pesquisa):
 
         else:
             write(f'{site}/?s={nome}', 0.05)
+
+    elif ferramenta == 1:
+        if pesquisa == 2:
+            write(f'{site}/pesquisa?titulo={nome}')
+            
     else:
         write(f'{site}/?s={nome}', 0.05)
             
@@ -34,7 +39,7 @@ def action(site, nome, ferramenta, pesquisa):
     press('enter')
 
 
-opcoes = input('[1] animes\n[2] Jogos\n[3] Aplicativos\n> ')
+opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n> ')
 thing = int(opcoes)
 
 if opcoes == '1':
@@ -46,11 +51,14 @@ if opcoes == '1':
         i = input()
 
     else:
-        site = input('\n[1] Animes Zone\n> ')
+        site = input('\n[1] Animes Zone\n[2] Better Anime\n> ')
         number = int(site)
 
         if site == '1':
             site = 'animeszone.net'
+
+        elif site == '2':
+            site = 'betteranime.net'
 
         else:
             print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
