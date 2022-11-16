@@ -39,7 +39,7 @@ def action(site, nome, ferramenta, pesquisa):
     press('enter')
 
 
-opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n> ')
+opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n[4] Open Discord and Whatsapp\n> ')
 thing = int(opcoes)
 
 if opcoes == '1':
@@ -113,6 +113,28 @@ elif opcoes == '3':
             i = input()
 
         action(site, app, thing,number)
+
+elif opcoes == '4':
+    
+    hotkey('win', '1')
+    sleep(10)
+
+    hotkey('ctrl', 't')
+    sleep(0.05)
+    hotkey('ctrl', '1')
+    0.05
+    hotkey('ctrl', 'w')
+    sleep(0.05)
+    
+    write('discord.com/app', 0.05)
+    press('enter')
+    sleep(0.2)
+    
+    hotkey('ctrl', 't')
+    sleep(0.2)
+    
+    write('web.whatsapp.com', 0.05)
+    press('enter')
 
 else:
     print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
