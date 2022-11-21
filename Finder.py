@@ -116,15 +116,20 @@ elif opcoes == '3':
 
 elif opcoes == '4':
     
-    hotkey('win', '1')
-    sleep(10)
+    moveTo(77, 752)
 
-    hotkey('ctrl', 't')
-    sleep(0.05)
-    hotkey('ctrl', '1')
-    0.05
-    hotkey('ctrl', 'w')
-    sleep(0.05)
+    click(button='right')
+    sleep(0.5)
+
+    press('down')
+    sleep(0.1)
+    press('down')
+    sleep(0.1)
+    press('enter')
+
+    sleep(8)
+    hotkey('win', 'up')
+    sleep(0.1)
     
     write('discord.com/app', 0.05)
     press('enter')
