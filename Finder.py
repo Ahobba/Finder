@@ -31,8 +31,8 @@ def action(site, nome, ferramenta, pesquisa):
         if pesquisa == 2:
             write(f'{site}/pesquisa?titulo={nome}')
 
-         else:
-             write(f'{site}/?s={nome}', 0.05)
+        else:
+            write(f'{site}/?s={nome}', 0.05)
             
     else:
         write(f'{site}/?s={nome}', 0.05)
