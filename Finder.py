@@ -21,7 +21,7 @@ def action(site, nome, ferramenta, pesquisa):
     sleep(0.5)
 
     if ferramenta == 2 or ferramenta == 3:
-        if pesquisa == 3 or pesquisa == 1:
+        if pesquisa == 3:
             write(f'{site}/search?q={nome}', 0.05) 
 
         else:
