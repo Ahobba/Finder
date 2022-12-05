@@ -117,33 +117,6 @@ elif opcoes == '3':
 
         action(site, app, thing,number)
 
-elif opcoes == '4':
-    
-    moveTo(77, 752)
-
-    click(button='right')
-    sleep(0.5)
-
-    press('down')
-    sleep(0.1)
-    press('down')
-    sleep(0.1)
-    press('enter')
-
-    sleep(8)
-    hotkey('win', 'up')
-    sleep(0.1)
-    
-    write('discord.com/app', 0.05)
-    press('enter')
-    sleep(0.2)
-    
-    hotkey('ctrl', 't')
-    sleep(0.2)
-    
-    write('web.whatsapp.com', 0.05)
-    press('enter')
-
 else:
     print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
     i = input()
