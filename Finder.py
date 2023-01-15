@@ -4,7 +4,7 @@ from time import sleep
 
 
 def action(site, nome, ferramenta, pesquisa):
-    moveTo(77, 752)
+    moveTo(103, 1055)
 
     click(button='right')
     sleep(0.5)
@@ -42,7 +42,7 @@ def action(site, nome, ferramenta, pesquisa):
     press('enter')
 
 
-opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n[4] Open Discord and Whatsapp\n> ')
+opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n[4] Filmes\n> ')
 thing = int(opcoes)
 
 if opcoes == '1':
@@ -117,6 +117,26 @@ elif opcoes == '3':
 
         action(site, app, thing,number)
 
+elif opcoes == '4':
+    filme = str(input('\nNome do Filme:\n>')).replace(' ', '+').lower()
+
+    if filme == '':
+        print('\nNão tem como pesquisar "nada".\nPor favor, feche e abra o programa novamente!')
+        i = input()
+
+    else:
+        site = input('\n[1] Torrent do Filmes\n>')
+        number = int(site)
+
+        if site == '1':
+            site = 'torrentdofilmes.com'
+
+        else:
+            print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
+            i = input()
+
+        action(site, filme, thing, number)
+            
 else:
     print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
     i = input()
