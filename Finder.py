@@ -1,24 +1,14 @@
 from pyautogui import moveTo, click, press, hotkey
 from keyboard import write
 from time import sleep
+from os import system
 
 
 def action(site, nome, ferramenta, pesquisa):
-    moveTo(103, 1055)
-
-    click(button='right')
-    sleep(0.5)
-
-    press('down')
-    sleep(0.1)
-    press('down')
-    sleep(0.1)
-    press('down')
-    press('enter')
-
-    sleep(7)
-    hotkey('win', 'up')
-    sleep(0.5)
+    system('"C:\Program Files\BraveSoftware\Brave-Browser\Application/brave.exe" -incognito')
+    
+    sleep(10)
+    moveTo(50, 50)
 
     if ferramenta == 2 or ferramenta == 3:
         if pesquisa == 3:
