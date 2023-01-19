@@ -6,8 +6,6 @@ from os import system
 
 def action(site, nome, ferramenta, pesquisa):
     system('"C:\Program Files\BraveSoftware\Brave-Browser\Application/brave.exe" -incognito')
-    
-    sleep(10)
     moveTo(50, 50)
 
     if ferramenta == 2 or ferramenta == 3:
@@ -44,7 +42,7 @@ if opcoes == '1':
         i = input()
 
     else:
-        site = input('\n[1] Animes Zone\n[2] Better Anime\n> ')
+        site = input('\n[1] Animes Zone\n[2] Better Anime\n[3] Anitube\n> ')
         number = int(site)
 
         if site == '1':
@@ -52,6 +50,9 @@ if opcoes == '1':
 
         elif site == '2':
             site = 'betteranime.net'
+
+        elif site == '3':
+            site = 'anitube.site'
 
         else:
             print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
