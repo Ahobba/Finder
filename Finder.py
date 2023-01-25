@@ -3,7 +3,6 @@ from keyboard import write
 from time import sleep
 from os import system
 
-from unidecode import unidecode
 from pyperclip import copy
 
 import re
@@ -24,8 +23,7 @@ def search(search_word):
 
         if len(results) > 0:
             print(f'(X) {dia[0].capitalize()} *site copiado*')
-            unidecode(dias[c])
-            copy(f'https://animeszone.net/calendario/?semana={dias[c]}')
+            copy(f'https://animeszone.net/calendario/?semana={dias[c].replace("ç", "c" )}')
 
         else:
             print(f'( ) {dia[0].capitalize()}')
