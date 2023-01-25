@@ -3,12 +3,15 @@ from keyboard import write
 from time import sleep
 from os import system
 
+from unidecode import unidecode
+from pyperclip import copy
+
 import re
 import requests
 
 def search(search_word):
     
-    dias='domingo', 'segunda-feira', 'terca-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sabado'
+    dias='domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sabado'
 
     for c in range(0, len(dias)):
 
@@ -20,12 +23,14 @@ def search(search_word):
         dia = dias[c].partition("-")
 
         if len(results) > 0:
-            print(f'(X) {dia[0].capitalize()}')        
+            print(f'(X) {dia[0].capitalize()} *site copiado*')
+            unidecode(dias[c])
+            copy(f'https://animeszone.net/calendario/?semana={dias[c]}')
 
         else:
             print(f'( ) {dia[0].capitalize()}')
 
-    input('\n===END===')
+    input('\n<press enter to exit...>')
 
 def action(site, nome, ferramenta, pesquisa):
     system('"C:\Program Files\BraveSoftware\Brave-Browser\Application/brave.exe" -incognito')
