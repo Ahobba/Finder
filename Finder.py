@@ -20,13 +20,10 @@ def search(search_word):
         dia = dias[c].partition("-")
 
         if len(results) > 0:
-            print(f'(X) {dia[0].capitalize()}')
-            site = f'start "C:\Program Files\BraveSoftware\Brave-Browser\Application/brave.exe" "https://animeszone.net/calendario/?semana={dias[c]}"'
+            print(f'(X) {dia[0].capitalize()}')        
 
         else:
             print(f'( ) {dia[0].capitalize()}')
-
-    system(site)
 
     input('\n===END===')
 
