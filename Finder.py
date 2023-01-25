@@ -3,6 +3,32 @@ from keyboard import write
 from time import sleep
 from os import system
 
+import re
+import requests
+
+def search(search_word):
+    
+    dias='domingo', 'segunda-feira', 'terca-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sabado'
+
+    for c in range(0, len(dias)):
+
+        url=f'https://animeszone.net/calendario/?semana={dias[c]}'
+        html_code = requests.get(url).text
+
+        results = re.findall(search_word, html_code)
+
+        dia = dias[c].partition("-")
+
+        if len(results) > 0:
+            print(f'(X) {dia[0].capitalize()}')
+            site = f'start "C:\Program Files\BraveSoftware\Brave-Browser\Application/brave.exe" "https://animeszone.net/calendario/?semana={dias[c]}"'
+
+        else:
+            print(f'( ) {dia[0].capitalize()}')
+
+    system(site)
+
+    input('\n===END===')
 
 def action(site, nome, ferramenta, pesquisa):
     system('"C:\Program Files\BraveSoftware\Brave-Browser\Application/brave.exe" -incognito')
@@ -30,7 +56,7 @@ def action(site, nome, ferramenta, pesquisa):
     press('enter')
 
 
-opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n[4] Filmes\n> ')
+opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n[4] Filmes\n[5] Calendário animes\n> ')
 thing = int(opcoes)
 
 if opcoes == '1':
@@ -127,6 +153,11 @@ elif opcoes == '4':
             i = input()
 
         action(site, filme, thing, number)
+
+elif opcoes == '5':
+    word = str(input('\nNome do Anime:\n>')).lower().replace(' ', '-')
+    print()
+    search(word)
             
 else:
     print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
