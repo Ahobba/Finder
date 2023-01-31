@@ -35,7 +35,7 @@ def action(site, nome, ferramenta, pesquisa):
     moveTo(50, 50)
 
     if ferramenta == 2 or ferramenta == 3:
-        if pesquisa == 3:
+        if pesquisa == 3 or pesquisa == 4:
             write(f'{site}/search?q={nome}', 0.05) 
 
         else:
@@ -96,7 +96,7 @@ elif opcoes == '2':
         i = input()
 
     else:
-        site = input('\n[1] Steam Unlocked\n[2] Br Jogos Torrent\n[3] The Pirate Jogos\n> ')
+        site = input('\n[1] Steam Unlocked\n[2] Br Jogos Torrent\n[3] The Pirate Jogos\n[4] Extro Games\n> ')
         number = int(site)
 
         if site == '1':
@@ -107,6 +107,9 @@ elif opcoes == '2':
 
         elif site == '3':
             site = 'thepiratejogos.net'
+
+        elif site == '4':
+            site = 'extrogames.com'
             
         else:
             print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
