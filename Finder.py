@@ -36,20 +36,20 @@ def action(site, nome, ferramenta, pesquisa):
 
     if ferramenta == 2 or ferramenta == 3:
         if pesquisa == 3 or pesquisa == 4:
-            write(f'{site}/search?q={nome}', 0.05) 
+            write(f'{site}/search?q={nome}', 0.08) 
 
         else:
-            write(f'{site}/?s={nome}', 0.05)
+            write(f'{site}/?s={nome}', 0.08)
 
     elif ferramenta == 1:
         if pesquisa == 2:
             write(f'{site}/pesquisa?titulo={nome}')
 
         else:
-            write(f'{site}/?s={nome}', 0.05)
+            write(f'{site}/?s={nome}', 0.08)
             
     else:
-        write(f'{site}/?s={nome}', 0.05)
+        write(f'{site}/?s={nome}', 0.08)
             
     sleep(0.2)
 
@@ -96,7 +96,7 @@ elif opcoes == '2':
         i = input()
 
     else:
-        site = input('\n[1] Steam Unlocked\n[2] Br Jogos Torrent\n[3] The Pirate Jogos\n[4] Extro Games\n> ')
+        site = input('\n[1] Steam Unlocked\n[2] Br Jogos Torrent\n[3] The Pirate Jogos\n[4] Extro Games\n[5] Free Gog Games\n> ')
         number = int(site)
 
         if site == '1':
@@ -110,6 +110,9 @@ elif opcoes == '2':
 
         elif site == '4':
             site = 'extrogames.com'
+
+        elif site == '5':
+            site = 'freegogpcgames.com'
             
         else:
             print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
