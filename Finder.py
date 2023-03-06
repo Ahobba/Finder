@@ -9,7 +9,7 @@ import re
 import requests
 
 def search(search_word):
-    
+
     dias='domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sabado'
 
     for c in range(0, len(dias)):
@@ -36,21 +36,17 @@ def action(site, nome, ferramenta, pesquisa):
 
     if ferramenta == 2 or ferramenta == 3:
         if pesquisa == 3 or pesquisa == 4:
-            write(f'{site}/search?q={nome}', 0.08) 
+            write(f'{site}/search?q={nome}', 0.08)
 
         else:
             write(f'{site}/?s={nome}', 0.08)
 
-    elif ferramenta == 1:
-        if pesquisa == 2:
-            write(f'{site}/pesquisa?titulo={nome}')
+    elif ferramenta == 1 and pesquisa == 2:
+        write(f'{site}{nome}', 0.08)
 
-        else:
-            write(f'{site}/?s={nome}', 0.08)
-            
     else:
         write(f'{site}/?s={nome}', 0.08)
-            
+
     sleep(0.2)
 
     press('enter')
@@ -60,7 +56,7 @@ opcoes = input('[1] Animes\n[2] Jogos\n[3] Aplicativos\n[4] Filmes\n[5] Calendá
 thing = int(opcoes)
 
 if opcoes == '1':
-    
+
     anime = input('\nNome do Anime:\n> ').replace(' ', '+').lower()
 
     if anime == '':
@@ -68,23 +64,21 @@ if opcoes == '1':
         i = input()
 
     else:
-        site = input('\n[1] Animes Zone\n[2] Better Anime\n[3] Anitube\n> ')
+        site = input('\n[1] Animes Zone\n[2] Anime Fire\n> ')
         number = int(site)
 
         if site == '1':
             site = 'animeszone.net'
 
         elif site == '2':
-            site = 'betteranime.net'
-
-        elif site == '3':
-            site = 'anitube.site'
+            anime = anime.replace('+', '-').lower()
+            site = 'animefire.net/pesquisar/'
 
         else:
             print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
             i = input()
 
-        
+
         action(site, anime, thing, number)
 
 elif opcoes == '2':
@@ -101,7 +95,7 @@ elif opcoes == '2':
 
         if site == '1':
             site = 'steamunlocked.net'
-            
+
         elif site == '2':
             site = 'brjogostorrents.com'
 
@@ -113,7 +107,7 @@ elif opcoes == '2':
 
         elif site == '5':
             site = 'freegogpcgames.com'
-            
+
         else:
             print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
             i = input()
@@ -122,7 +116,7 @@ elif opcoes == '2':
 
 elif opcoes == '3':
     app = str(input('\nNome do aplicativo:\n> ')).replace(' ', '+').lower()
-    
+
     if app == '':
         print('\nNão tem como pesquisar "nada".\nPor favor, feche e abra o programa novamente!')
         i = input()
@@ -164,7 +158,7 @@ elif opcoes == '5':
     word = str(input('\nNome do Anime:\n>')).lower().replace(' ', '-')
     print()
     search(word)
-            
+
 else:
     print('\nOpção inválida.\nPor favor, feche e abra o programa novamente!')
     i = input()
